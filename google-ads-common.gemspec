@@ -5,7 +5,7 @@ require 'ads_common/api_config'
 
 Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
-  s.name = GEM_NAME
+  s.name = 'google-ads-common'
   s.version = AdsCommon::ApiConfig::ADS_COMMON_VERSION
   s.summary = 'Common code for Google Ads APIs.'
   s.description = ("%s provides essential utilities shared by all Ads Ruby " +
