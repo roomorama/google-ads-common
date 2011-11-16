@@ -3,13 +3,20 @@ $:.unshift lib unless $:.include? lib
 
 require 'ads_common/api_config'
 
+GEM_NAME = 'google-ads-common'
+
+files = FileList['lib/**/*', 'Rakefile'].to_a
+tests = FileList['test/**/test_*.rb']
+docs = ['README', 'COPYING', 'ChangeLog']
+extra_files = ['test/test_config.yml']
+
 Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
-  s.name = 'google-ads-common'
+  s.name = GEM_NAME
   s.version = AdsCommon::ApiConfig::ADS_COMMON_VERSION
   s.summary = 'Common code for Google Ads APIs.'
   s.description = ("%s provides essential utilities shared by all Ads Ruby " +
-      "client libraries.") % 'google-ads-common'
+      "client libraries.") % GEM_NAME
   s.authors = ['Sergio Gomes', 'Danial Klimkin']
   s.email = 'api.dklimkin@gmail.com'
   s.homepage = 'http://code.google.com/p/google-api-ads-ruby/'
