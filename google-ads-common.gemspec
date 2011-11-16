@@ -5,11 +5,6 @@ require 'ads_common/api_config'
 
 GEM_NAME = 'google-ads-common'
 
-files = FileList['lib/**/*', 'Rakefile'].to_a
-tests = FileList['test/**/test_*.rb']
-docs = ['README', 'COPYING', 'ChangeLog']
-extra_files = ['test/test_config.yml']
-
 Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.name = GEM_NAME
@@ -20,13 +15,11 @@ Gem::Specification.new do |s|
   s.authors = ['Sergio Gomes', 'Danial Klimkin']
   s.email = 'api.dklimkin@gmail.com'
   s.homepage = 'http://code.google.com/p/google-api-ads-ruby/'
-  s.require_path = 'lib'
-  s.files = files
-  s.test_files = tests
-  s.has_rdoc = true
-  s.extra_rdoc_files = docs
   s.add_dependency('savon', '>= 0.9.7')
   s.add_dependency('httpclient', '>= 2.1.6')
   s.add_dependency('httpi', '~> 0.9.2')
   s.add_dependency('oauth', '~> 0.4.5')
+  
+  s.files = `git ls-files`.split("\n")
+  s.require_path = "lib"
 end
